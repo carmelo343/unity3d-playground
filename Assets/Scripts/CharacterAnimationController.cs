@@ -43,10 +43,6 @@ public class CharacterAnimationController : MonoBehaviour
     }
 
 
-
-
-
-
     // handles acceleration and deceleration
     void ChangeVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
     {
