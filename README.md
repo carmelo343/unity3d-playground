@@ -1,2 +1,2 @@
 # unity3d-playground
-My testing playground for Unity3D game engine
+My prototyping playground for Unity3D game engine
