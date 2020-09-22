@@ -16,10 +16,9 @@ public class CharacterAnimationController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        bool isRunning = (horizontal != 0f || vertical != 0f);
+        bool isWalking = (horizontal != 0f || vertical != 0f);
 
-        animator.SetBool("isRunning", isRunning);
-
+        animator.SetBool("isWalking", isWalking);
 
         Debug.Log(string.Format("Horizontal: {0} Vertical: {1}", horizontal, vertical));
     }
