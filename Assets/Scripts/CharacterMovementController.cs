@@ -7,17 +7,17 @@ public class CharacterMovementController : MonoBehaviour
     public CharacterController characterController;
     public Transform cam;
 
-    public float speed = 0f;
+    public float speed = 3f;
     public float turnSmoothTime = 0.1f;
 
     float turnSmoothVelocity;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -25,7 +25,7 @@ public class CharacterMovementController : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if(direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
